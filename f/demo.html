@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<title>无标题文档</title> 
+<style type="text/css"> 
+#demo1, #demo2 { 
+    width:500px; 
+    height:300px; 
+    border:1px solid #CCC; 
+} 
+#demo1 { background-color:#9FF; margin-bottom:10px; } 
+#demo2 { background-color:#FFC; } 
+</style> 
+<script type="text/javascript"> 
+function showCoords(e, obj) { 
+    var e = window.event || e; 
+    var arCoords = [e.clientX, e.clientY]; 
+    obj.getElementsByTagName('p')[1].getElementsByTagName('span')[1].innerHTML = 'X:' + arCoords[0] + ',Y:' + arCoords[1]; 
+} 
+window.onload = function() { 
+    document.getElementById('demo1').onmousemove = function(event) { showCoords(event, this); } 
+    document.getElementById('demo2').onmouseover = function(event) { showCoords(event, this); } 
+} 
+</script> 
+</head> 
+
+<body> 
+<div id="demo1"> 
+    <p>mousemove测试</p> 
+    <p><span>当前坐标：</span><span></span></p> 
+</div> 
+<div id="demo2"> 
+    <p>mouseover测试</p> 
+    <p><span>当前坐标：</span><span></span></p> 
+</div> 
+</body> 
+</html> 
